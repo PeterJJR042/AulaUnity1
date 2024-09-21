@@ -32,22 +32,25 @@ public class IAMovement : MonoBehaviour
 
         Chase();
 
-        if(canAttack)
+        if(Vector3.Distance(transform.position, player.position) < AttackRange)
         {
-            Attack();
-        }
-        else
-        {
-            currentAttackCooldown -= Time.deltaTime;
-
-            if (currentAttackCooldown <= 0)
+            if (canAttack)
             {
-                canAttack = true;
-                currentAttackCooldown = AttackSpeed;
+                Attack();
+            }
+            else
+            {
+                currentAttackCooldown -= Time.deltaTime;
+
+                if (currentAttackCooldown <= 0)
+                {
+                    canAttack = true;
+                    currentAttackCooldown = AttackSpeed;
+                }
             }
         }
     }
-    
+
     void Attack()
     {
         canAttack = false;
