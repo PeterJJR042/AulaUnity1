@@ -23,6 +23,10 @@ public class IACombat : MonoBehaviour
 
     public bool CheckAndAttack(Transform target)
     {
+
+        CooldownRecovery();
+
+
         if (Vector3.Distance(transform.position, target.position) < brain.AttackRange)
         {
             if (canAttack)
