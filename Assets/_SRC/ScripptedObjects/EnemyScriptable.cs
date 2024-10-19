@@ -8,6 +8,7 @@ public class EnemyScriptable : ScriptableObject
 {
     [Header("Data")]
     public Status Status;
+    public float speed;
 
     [Header("Combat Data")]
     public float AttackRange;
