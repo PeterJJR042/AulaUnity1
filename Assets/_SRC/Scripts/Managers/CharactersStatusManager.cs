@@ -10,9 +10,11 @@ public class CharactersStatusManager : MonoBehaviour, IDamageable
 
     public event Action OnTakeDamage;
 
-    private void Start()
+    public void InitStatus(Status pStatus)
     {
-        status.Init();
+        status.Health = pStatus.Health;
+        status.Armor = pStatus.Armor;
+        status.MagicResist = pStatus.MagicResist;
     }
 
     public void TakeDamage(int amount)

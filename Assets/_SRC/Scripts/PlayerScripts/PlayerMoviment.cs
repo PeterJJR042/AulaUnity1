@@ -39,7 +39,7 @@ public class PlayerMoviment : MonoBehaviour
         {
             if (hit.collider.CompareTag("Ground"))
             {
-                Debug.Log("Hitando Chao");
+                //Debug.Log("Hitando Chao");
 
                 nav.SetDestination(hit.point);
             }
